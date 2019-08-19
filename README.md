@@ -1,5 +1,5 @@
 # DokuLaravel - DOKU Payment Gateway Library For Laravel
-[![Total Downloads](https://poser.pugx.org/crocodicstudio/dokularavel/downloads)](https://packagist.org/packages/crocodicstudio/dokularavel) [![Latest Unstable Version](https://poser.pugx.org/crocodicstudio/dokularavel/v/unstable)](https://packagist.org/packages/crocodicstudio/dokularavel) [![License](https://poser.pugx.org/crocodicstudio/dokularavel/license)](https://packagist.org/packages/crocodicstudio/dokularavel) [![Monthly Downloads](https://poser.pugx.org/crocodicstudio/dokularavel/d/monthly)](https://packagist.org/packages/crocodicstudio/dokularavel)
+[![Total Downloads](https://poser.pugx.org/yasapurnama/dokularavel/downloads)](https://packagist.org/packages/yasapurnama/dokularavel) [![Latest Unstable Version](https://poser.pugx.org/yasapurnama/dokularavel/v/unstable)](https://packagist.org/packages/yasapurnama/dokularavel) [![License](https://poser.pugx.org/yasapurnama/dokularavel/license)](https://packagist.org/packages/yasapurnama/dokularavel) [![Monthly Downloads](https://poser.pugx.org/yasapurnama/dokularavel/d/monthly)](https://packagist.org/packages/yasapurnama/dokularavel)
 
 ![Doku Laravel](http://crudbooster.com/dokularavel_screenshot.png)
 
@@ -13,15 +13,15 @@ Ini adalah DOKU Payment Gateway Library yang sudah di *compile* menjadi *Package
 
 ## 1. Instalasi untuk Laravel 5.x
 ```
-composer require crocodicstudio/dokularavel
+composer require yasapurnama/dokularavel
 ```
 ## 2. Tambahkan ke Service Provider (config/app.php)
 ```
-crocodicstudio\dokularavel\DokuLaravelServiceProvider::class,
+yasapurnama\dokularavel\DokuLaravelServiceProvider::class,
 ```
 ## 3. Publikasi File Konfigurasi
 ```
-php artisan vendor:publish --provider="crocodicstudio\dokularavel\DokuLaravelServiceProvider"
+php artisan vendor:publish --provider="yasapurnama\dokularavel\DokuLaravelServiceProvider"
 ```
 ## 4. Pengaturan Konfigurasi Dasar
 Pada folder config/ akan terdapat file baru bernama **dokularavel.php** yang isinya adalah :  

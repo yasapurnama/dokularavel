@@ -1,6 +1,6 @@
 {
     "name": "yasapurnama/dokularavel",
-    "description": "This package is DOKU Payment Gateway Library for Laravel. Forked from crocodicstudio",
+    "description": "This package is DOKU Payment Gateway Library for Laravel. Forked from crocodicstudio/dokularavel",
     "type": "library",
     "license": "MIT",
     "minimum-stability": "dev",
