@@ -105,4 +105,13 @@ return [
 	|
 	*/
 	'DEBUG_MODE' => FALSE,
+
+	/**
+	 * DEBUGGING PROXY
+	 * To Intercept request
+	 * 
+	 * will be available if DEBUG_MODE set TRUE
+	 * 
+	 */
+	'DEBUG_PROXY' => '1.1.1.20:8888'
 ];

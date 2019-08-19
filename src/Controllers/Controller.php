@@ -51,6 +51,9 @@ class Controller extends BaseController
 		curl_setopt( $ch, CURLOPT_POST, 1);
 		curl_setopt( $ch, CURLOPT_POSTFIELDS, 'data='. json_encode($data));
 		curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
+		if(config('dokularavel.DEBUG_MODE') == TRUE){
+			curl_setopt( $ch, CURLOPT_PROXY, config('dokularavel.DEBUG_PROXY'));
+		}
 		curl_setopt( $ch, CURLOPT_HEADER, 0);
 		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
 
@@ -73,7 +76,9 @@ class Controller extends BaseController
 		curl_setopt( $ch, CURLOPT_POST, 1);
 		curl_setopt( $ch, CURLOPT_POSTFIELDS, 'data='. json_encode($data));
 		curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
-		// curl_setopt( $ch, CURLOPT_PROXY, '1.1.1.5:8888');
+		if(config('dokularavel.DEBUG_MODE') == TRUE){
+			curl_setopt( $ch, CURLOPT_PROXY, config('dokularavel.DEBUG_PROXY'));
+		}
 		curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 0);
 		curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0);
 		curl_setopt( $ch, CURLOPT_HEADER, 0);
@@ -101,6 +106,9 @@ class Controller extends BaseController
 		curl_setopt( $ch, CURLOPT_POST, 1);
 		curl_setopt( $ch, CURLOPT_POSTFIELDS, 'data='. json_encode($data));
 		curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
+		if(config('dokularavel.DEBUG_MODE') == TRUE){
+			curl_setopt( $ch, CURLOPT_PROXY, config('dokularavel.DEBUG_PROXY'));
+		}
 		curl_setopt( $ch, CURLOPT_HEADER, 0);
 		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
 
@@ -126,6 +134,9 @@ class Controller extends BaseController
 		curl_setopt( $ch, CURLOPT_POST, 1);
 		curl_setopt( $ch, CURLOPT_POSTFIELDS, 'data='. json_encode($data));
 		curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
+		if(config('dokularavel.DEBUG_MODE') == TRUE){
+			curl_setopt( $ch, CURLOPT_PROXY, config('dokularavel.DEBUG_PROXY'));
+		}
 		curl_setopt( $ch, CURLOPT_HEADER, 0);
 		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
 
@@ -151,6 +162,9 @@ class Controller extends BaseController
 		curl_setopt( $ch, CURLOPT_POST, 1);
 		curl_setopt( $ch, CURLOPT_POSTFIELDS, 'data='. json_encode($dataPayment));
 		curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
+		if(config('dokularavel.DEBUG_MODE') == TRUE){
+			curl_setopt( $ch, CURLOPT_PROXY, config('dokularavel.DEBUG_PROXY'));
+		}
 		curl_setopt( $ch, CURLOPT_HEADER, 0);
 		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
 
@@ -176,6 +190,9 @@ class Controller extends BaseController
 		curl_setopt( $ch, CURLOPT_POST, 1);
 		curl_setopt( $ch, CURLOPT_POSTFIELDS, 'data='. json_encode($data));
 		curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
+		if(config('dokularavel.DEBUG_MODE') == TRUE){
+			curl_setopt( $ch, CURLOPT_PROXY, config('dokularavel.DEBUG_PROXY'));
+		}
 		curl_setopt( $ch, CURLOPT_HEADER, 0);
 		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
 
@@ -205,8 +222,11 @@ class Controller extends BaseController
 		$data['WORDS']           = sha1( $data['MALLID'] . config('dokularavel.SHARED_KEY') . $data['TRANSIDMERCHANT'] );			
 
 		$ch = curl_init( $this->paymentStatusUrl );
-		curl_setopt( $ch, CURLOPT_POST, sizeof($data));
-		curl_setopt( $ch, CURLOPT_POSTFIELDS, $data );
+		curl_setopt( $ch, CURLOPT_POST, true);
+		curl_setopt( $ch, CURLOPT_POSTFIELDS, http_build_query($data) );
+		if(config('dokularavel.DEBUG_MODE') == TRUE){
+			curl_setopt( $ch, CURLOPT_PROXY, config('dokularavel.DEBUG_PROXY'));
+		}
 		curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 0);
 		curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0);
 		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
