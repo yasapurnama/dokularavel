@@ -13,12 +13,12 @@ class Controller extends BaseController
 {    
 
     //API DOKU ENDPOINT	
-	var $prePaymentUrl      = 'http://staging.doku.com/api/payment/PrePayment';
-	var $paymentUrl         = 'http://staging.doku.com/api/payment/paymentMip';
-	var $directPaymentUrl   = 'http://staging.doku.com/api/payment/PaymentMIPDirect';
-	var $generateCodeUrl    = 'http://staging.doku.com/api/payment/doGeneratePaymentCode';
-	var $redirectPaymentUrl = 'http://staging.doku.com/api/payment/doInitiatePayment';
-	var $captureUrl         = 'http://staging.doku.com/api/payment/DoCapture';
+	var $prePaymentUrl      = 'https://staging.doku.com/api/payment/PrePayment';
+	var $paymentUrl         = 'https://staging.doku.com/api/payment/paymentMip';
+	var $directPaymentUrl   = 'https://staging.doku.com/api/payment/PaymentMIPDirect';
+	var $generateCodeUrl    = 'https://staging.doku.com/api/payment/doGeneratePaymentCode';
+	var $redirectPaymentUrl = 'https://staging.doku.com/api/payment/doInitiatePayment';
+	var $captureUrl         = 'https://staging.doku.com/api/payment/DoCapture';
 	var $paymentStatusUrl   = 'https://staging.doku.com/Suite/CheckStatus';
 
 	// var $prePaymentUrl      = 'https://pay.doku.com/api/payment/PrePayment';
@@ -73,6 +73,9 @@ class Controller extends BaseController
 		curl_setopt( $ch, CURLOPT_POST, 1);
 		curl_setopt( $ch, CURLOPT_POSTFIELDS, 'data='. json_encode($data));
 		curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
+		// curl_setopt( $ch, CURLOPT_PROXY, '1.1.1.5:8888');
+		curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 0);
+		curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0);
 		curl_setopt( $ch, CURLOPT_HEADER, 0);
 		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
 

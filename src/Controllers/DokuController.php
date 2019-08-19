@@ -160,7 +160,7 @@ class DokuController extends Controller {
 		if(config('dokularavel.LIVE_MODE') == TRUE) {
 			$data['domain'] = 'https://pay.doku.com';
 		}else{
-			$data['domain' ] = 'http://staging.doku.com';
+			$data['domain' ] = 'https://staging.doku.com';
 		}
 
 		$hook = new \App\Http\Controllers\DokuLaravelHookController;

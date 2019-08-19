@@ -37,7 +37,7 @@
 	                    <li>
 	                    	<div class='form-group'>
 	                    		<h3 style="color:#B7042C;" align="center">
-	                    			<div id='icon-tick' align="center"><img style="width:30%" src='{{ asset("public/vendor/dokularavel/stop.png") }}'/></div><br/>
+	                    			<div id='icon-tick' align="center"><img style="width:30%" src='{{ asset("vendor/dokularavel/stop.png") }}'/></div><br/>
 	                    			<span style="font-size:27px">Transaction Failed</span>
 	                    		</h3>
 	                    	</div>
@@ -49,7 +49,7 @@
 	                    <li>
 	                    	<div class='form-group'>
 	                    		<h3 style="color:#00af11;" align="center">
-	                    			<div id='icon-tick' align="center"><img style="width:50%" src='{{ asset("public/vendor/dokularavel/icon-tick.png") }}'/></div>
+	                    			<div id='icon-tick' align="center"><img style="width:50%" src='{{ asset("vendor/dokularavel/icon-tick.png") }}'/></div>
 	                    			<span style="font-size:27px">Transaction Success</span>
 	                    		</h3>
 	                    	</div>
