@@ -1,6 +1,6 @@
 <?php
 
-$namespace = '\crocodicstudio\dokularavel\Controllers';
+$namespace = '\yasapurnama\dokularavel\Controllers';
 Route::group(['middleware'=>['\Illuminate\Session\Middleware\StartSession'],'prefix'=>config('dokularavel.PAYMENT_PATH'),'namespace'=>$namespace], function () {		
 	Route::get('/', ['uses'=>'DokuController@index','as'=>'DokuController.index']);
 	Route::post('check-status', ['uses'=>'DokuController@checkStatus','as'=>'DokuController.checkStatus']);

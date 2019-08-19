@@ -1,6 +1,6 @@
 <?php
 
-namespace crocodicstudio\dokularavel\Controllers;
+namespace yasapurnama\dokularavel\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
 

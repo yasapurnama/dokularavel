@@ -1,5 +1,5 @@
 <?php 
-namespace crocodicstudio\dokularavel\Controllers;
+namespace yasapurnama\dokularavel\Controllers;
 
 use Request;
 use Illuminate\Support\Facades\DB;

@@ -1,6 +1,6 @@
 <?php
 
-namespace crocodicstudio\dokularavel;
+namespace yasapurnama\dokularavel;
 
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\ServiceProvider;
