@@ -76,8 +76,10 @@ class DokuController extends Controller {
 		if($this->show_doku_success_page == FALSE && $this->show_finish_page == FALSE) {
 			die('Please set the REDIRECT PAGE setting, at least one set to be TRUE');
 		}
-		
+					
+	}
 
+	public function checkTransID(){
 		$trans_id        = (Session::get('dokularavel_trans_id'))?:$this->default_payment_channel;
 		$trans_id        = (Request::get('trans_id'))?:$trans_id;
 		$trans_id        = (Request::get('doku_invoice_no'))?:$trans_id;
@@ -113,8 +115,7 @@ class DokuController extends Controller {
 			}else{
 				// die('the trans_id value is not found');
 			}
-		}		
-					
+		}	
 	}
 
 	public function checkParams() {
@@ -136,7 +137,8 @@ class DokuController extends Controller {
 		}
 	}
 
-	public function index() {				
+	public function index() {	
+		$this->checkTransID();			
 		//Validation the parameters
 		if(Request::get('trans_id')=='') die('Transaction aborted because trans_id is not found !');		
 
@@ -179,7 +181,9 @@ class DokuController extends Controller {
 		}		
 	}
 
-	public function pay() {		
+	public function pay() {	
+		$this->checkTransID();
+
 		$this->checkParams();
 
 		$hook = new \App\Http\Controllers\DokuLaravelHookController;
@@ -441,6 +445,7 @@ class DokuController extends Controller {
 	}
 
 	public function notify($screet_code) {
+		$this->checkTransID();
 
 		if(!$screet_code) abort(404);
 
@@ -487,6 +492,7 @@ class DokuController extends Controller {
 	}
 
 	public function checkStatus() {
+		$this->checkTransID();
 		$trans_id = Request::get('trans_id');
 		if(!$trans_id) {
 			return redirect($this->redirect_url.'?status=failed');
@@ -508,6 +514,8 @@ class DokuController extends Controller {
 	}
 
 	public function paycode() {
+		$this->checkTransID();
+
 		if(!Session::get('dokularavel_trans_id')) return redirect(route('DokuController.index').'?r=invoice_null');
 
 		$invoice_no = $this->invoice['trans_id'];
@@ -525,6 +533,8 @@ class DokuController extends Controller {
 	}
 
 	public function waitingTransfer() {
+		$this->checkTransID();
+
 		if(!Session::get('dokularavel_trans_id')) return redirect(route('DokuController.index').'?r=invoice_null');
 
 		$invoice_no = $this->invoice['trans_id'];
@@ -542,6 +552,7 @@ class DokuController extends Controller {
 	}
 
 	public function finish() {
+		$this->checkTransID();
 
 		if(!Session::get('dokularavel_trans_id')) return redirect(route('DokuController.index').'?r=invoice_null');
 
@@ -561,6 +572,7 @@ class DokuController extends Controller {
 
 
 	public function checkPaymentStatus($invoice_no) {
+		$this->checkTransID();
 
 		$responseXML = $this->doCheckPaymentStatus($invoice_no);
 
@@ -568,6 +580,7 @@ class DokuController extends Controller {
 	}
 
 	public function debug() {
+		$this->checkTransID();
 
 		if(config('dokularavel.DEBUG_MODE') == FALSE) abort(404);
 

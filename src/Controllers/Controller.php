@@ -53,6 +53,8 @@ class Controller extends BaseController
 		curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
 		if(config('dokularavel.DEBUG_MODE') == TRUE){
 			curl_setopt( $ch, CURLOPT_PROXY, config('dokularavel.DEBUG_PROXY'));
+			curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 0);
+			curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0);
 		}
 		curl_setopt( $ch, CURLOPT_HEADER, 0);
 		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
@@ -78,9 +80,9 @@ class Controller extends BaseController
 		curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
 		if(config('dokularavel.DEBUG_MODE') == TRUE){
 			curl_setopt( $ch, CURLOPT_PROXY, config('dokularavel.DEBUG_PROXY'));
+			curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 0);
+			curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0);
 		}
-		curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 0);
-		curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0);
 		curl_setopt( $ch, CURLOPT_HEADER, 0);
 		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
 
@@ -108,6 +110,8 @@ class Controller extends BaseController
 		curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
 		if(config('dokularavel.DEBUG_MODE') == TRUE){
 			curl_setopt( $ch, CURLOPT_PROXY, config('dokularavel.DEBUG_PROXY'));
+			curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 0);
+			curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0);
 		}
 		curl_setopt( $ch, CURLOPT_HEADER, 0);
 		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
@@ -136,6 +140,8 @@ class Controller extends BaseController
 		curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
 		if(config('dokularavel.DEBUG_MODE') == TRUE){
 			curl_setopt( $ch, CURLOPT_PROXY, config('dokularavel.DEBUG_PROXY'));
+			curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 0);
+			curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0);
 		}
 		curl_setopt( $ch, CURLOPT_HEADER, 0);
 		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
@@ -164,6 +170,8 @@ class Controller extends BaseController
 		curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
 		if(config('dokularavel.DEBUG_MODE') == TRUE){
 			curl_setopt( $ch, CURLOPT_PROXY, config('dokularavel.DEBUG_PROXY'));
+			curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 0);
+			curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0);
 		}
 		curl_setopt( $ch, CURLOPT_HEADER, 0);
 		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
@@ -192,6 +200,8 @@ class Controller extends BaseController
 		curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
 		if(config('dokularavel.DEBUG_MODE') == TRUE){
 			curl_setopt( $ch, CURLOPT_PROXY, config('dokularavel.DEBUG_PROXY'));
+			curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 0);
+			curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0);
 		}
 		curl_setopt( $ch, CURLOPT_HEADER, 0);
 		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
@@ -226,9 +236,9 @@ class Controller extends BaseController
 		curl_setopt( $ch, CURLOPT_POSTFIELDS, http_build_query($data) );
 		if(config('dokularavel.DEBUG_MODE') == TRUE){
 			curl_setopt( $ch, CURLOPT_PROXY, config('dokularavel.DEBUG_PROXY'));
+			curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 0);
+			curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0);
 		}
-		curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 0);
-		curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0);
 		curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
 
 		$responseXML = curl_exec( $ch );
