@@ -113,7 +113,7 @@ class DokuController extends Controller {
 					];		
 						
 			}else{
-				// die('the trans_id value is not found');
+				return abort(404);
 			}
 		}	
 	}
